@@ -1,20 +1,23 @@
-CREATE SCHEMA chat;
+DROP SCHEMA IF EXISTS CASCADE;
 
-CREATE TABLE chat.users (
-    UserId SERIAL PRIMARY KEY,
-    Login varchar(255) NOT NULL,
-    Password varchar(255) NOT NULL
+CREATE SCHEMA IF NOT EXISTS chat;
+
+CREATE TABLE IF NOT EXISTS chat.users (
+    id SERIAL PRIMARY KEY,
+    login varchar(255) NOT NULL,
+    password varchar(255) NOT NULL
 );
 
-CREATE TABLE chat.messages(
-    MessageId SERIAL PRIMARY KEY ,
-    Author varchar(255),
-    Text varchar(255),
-    dateTime timestamp default CURRENT_TIMESTAMP
+CREATE TABLE IF NOT EXISTS chat.messages(
+    id SERIAL PRIMARY KEY ,
+    author integer references chat.users(id) NOT NULL,
+    room integer references chat.chatrooms(id) NOT NULL,
+    text varchar(255) NOT NULL ,
+    time timestamp default CURRENT_TIMESTAMP
 );
 
-CREATE TABLE chat.chatrooms(
-    ChatroomId SERIAL PRIMARY KEY ,
-    Name varchar(255),
-    Owner varchar(255)
+CREATE TABLE IF NOT EXISTS chat.chatrooms(
+    id SERIAL PRIMARY KEY ,
+    name varchar(255) NOT NULL ,
+    owner integer references chat.users(id) NOT NULL
 );
