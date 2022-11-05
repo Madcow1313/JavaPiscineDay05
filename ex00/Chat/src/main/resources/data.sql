@@ -13,6 +13,6 @@ insert into chat.chatrooms(name, owner) values
 insert into chat.messages (author, room, text values)
 ((select id from chat.user where login = "Yagami Light"), (select id from chat.chatrooms where name = "Tokio"), "All according to keikaku"),
 ((select id from chat.user where login = "Naruto Uzumaki"), (select id from chat.chatrooms where name = "Konoha"), "I will become Hokage"),
-((select id from chat.user where login = "Komi Shouko"), (select id from chat.chatrooms where name = "homeroom"), "..."),
+((select id from chat.user where login = "Komi Shouko"), (select id from chat.chatrooms where name = "Homeroom"), "..."),
 ((select id from chat.user where login = "Kaguya Shinomiya"), (select id from chat.chatrooms where name = "Shuchiin"), "How cute"),
 ((select id from chat.user where login = "Ichigo Kurosaki"), (select id fromt chat.chatrooms where name = "Soul Society"), "BANKAI!!!!!");
