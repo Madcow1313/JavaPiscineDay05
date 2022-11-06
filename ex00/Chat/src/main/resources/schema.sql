@@ -1,11 +1,17 @@
-DROP SCHEMA IF EXISTS CASCADE;
+DROP SCHEMA IF EXISTS chat CASCADE;
 
 CREATE SCHEMA IF NOT EXISTS chat;
 
 CREATE TABLE IF NOT EXISTS chat.users (
     id SERIAL PRIMARY KEY,
-    login varchar(255) NOT NULL,
+    login varchar(255) NOT NULL unique,
     password varchar(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS chat.chatrooms(
+    id SERIAL PRIMARY KEY ,
+    name varchar(255) NOT NULL unique,
+    owner integer references chat.users(id) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS chat.messages(
@@ -16,8 +22,3 @@ CREATE TABLE IF NOT EXISTS chat.messages(
     time timestamp default CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS chat.chatrooms(
-    id SERIAL PRIMARY KEY ,
-    name varchar(255) NOT NULL ,
-    owner integer references chat.users(id) NOT NULL
-);

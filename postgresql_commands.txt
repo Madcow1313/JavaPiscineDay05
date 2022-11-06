@@ -1,0 +1,4 @@
+sudo -u postgres psql postgres
+create database chat;
+\connect chat
+\i path_to_sql_file schema data
