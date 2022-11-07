@@ -18,7 +18,6 @@ public class MessageRepositoryJdbcImpl implements MessageRepository{
         this.dataSource = dataSource;
     }
 
-    @Override
     public Optional<Message> findById(Long id) {
         Connection connection;
         Statement statement;
