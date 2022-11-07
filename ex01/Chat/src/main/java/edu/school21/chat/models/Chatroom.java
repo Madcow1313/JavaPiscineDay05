@@ -9,7 +9,7 @@ public class Chatroom {
     private User owner;
     private List<Message> messages;
 
-    Chatroom(Long id, String name, User owner){
+    public Chatroom(Long id, String name, User owner){
         this.id = id;
         this.name = name;
         this.owner = owner;

@@ -10,7 +10,7 @@ public class Message {
     private String text;
     private LocalDateTime dateTime;
 
-    Message(Long id, User author, Chatroom room, String text, LocalDateTime dateTime){
+    public Message(Long id, User author, Chatroom room, String text, LocalDateTime dateTime){
         this.id = id;
         this.author = author;
         this.room = room;

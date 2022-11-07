@@ -2,3 +2,6 @@ sudo -u postgres psql postgres
 create database chat;
 \connect chat
 \i path_to_sql_file schema data
+
+#MacOS Launch
+/Users/wabathur/.brew/opt/postgresql@14/bin/postgres -D /Users/wabathur/.brew/var/postgresql@14
