@@ -1,6 +1,5 @@
 package edu.school21.chat.repositories;
 
-
 import com.zaxxer.hikari.HikariDataSource;
 import com.zaxxer.hikari.HikariConfig;
 
@@ -16,6 +15,7 @@ public class JdbcDataSource {
     private static HikariConfig config;
 
     public JdbcDataSource(){
+        config = new HikariConfig();
         config.setJdbcUrl(D_URL);
         config.setUsername(DB_USERNAME);
         config.setPassword(DB_PASSWORD);
