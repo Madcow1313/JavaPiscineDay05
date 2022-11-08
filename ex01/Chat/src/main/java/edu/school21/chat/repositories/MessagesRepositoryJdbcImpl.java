@@ -11,10 +11,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Optional;
 
-public class MessageRepositoryJdbcImpl implements MessageRepository{
+public class MessagesRepositoryJdbcImpl implements MessagesRepository {
     private DataSource dataSource;
 
-    public MessageRepositoryJdbcImpl(DataSource dataSource){
+    public MessagesRepositoryJdbcImpl(DataSource dataSource){
         this.dataSource = dataSource;
     }
 

@@ -2,7 +2,7 @@ package edu.school21.chat.app;
 
 import edu.school21.chat.models.Message;
 import edu.school21.chat.repositories.JdbcDataSource;
-import edu.school21.chat.repositories.MessageRepositoryJdbcImpl;
+import edu.school21.chat.repositories.MessagesRepositoryJdbcImpl;
 
 import java.util.Scanner;
 
@@ -10,8 +10,8 @@ public class Program {
     public static void main(String[] args){
         JdbcDataSource dataSource = new JdbcDataSource();
 
-        MessageRepositoryJdbcImpl repositoryJdbc =
-                new MessageRepositoryJdbcImpl(dataSource.getHikariDataSource());
+        MessagesRepositoryJdbcImpl repositoryJdbc =
+                new MessagesRepositoryJdbcImpl(dataSource.getHikariDataSource());
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter message id");
